@@ -15,7 +15,7 @@
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="494.0" fitWidth="400.0" layoutX="-171.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Hotel/images/hotel.jpg" />
+                  <Image url="@../../Hotel/images/hotel.jpg" />
                </image>
             </ImageView>
          </children>
@@ -26,7 +26,7 @@
          <children>
             <ImageView fx:id="logoImageView" fitHeight="78.0" fitWidth="132.0" layoutX="97.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Hotel/images/logohotel.png" />
+                  <Image url="@../../Hotel/images/logohotel.png" />
                </image>
             </ImageView>
             <Label layoutX="26.0" layoutY="155.0" text="Username" />
