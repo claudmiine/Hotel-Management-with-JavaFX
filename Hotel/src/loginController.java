@@ -19,11 +19,7 @@ import java.net.URL;
 public class loginController implements Initializable {
 
     @FXML
-    private Button cancelButton;
-    @FXML
     private Label loginMessageLabel;
-    @FXML
-    private ImageView brandingImageView;
     @FXML
     private ImageView logoImageView;
     @FXML
@@ -36,13 +32,10 @@ public class loginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFile = new File("images/hotel.jpg");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(brandingImage);
 
-        File logoFile = new File("images/logohotel.jpg");
+        File logoFile = new File("images/logo.jpg");
         Image logoImage = new Image(logoFile.toURI().toString());
-        logoImageView.setImage(brandingImage);
+        logoImageView.setImage(logoImage);
 
     }
 
@@ -54,11 +47,6 @@ public class loginController implements Initializable {
         }
     }
 
-
-    public void cancelButtonOnAction(ActionEvent event) {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
-    }
 
     public void validateLogin() {
         //telling the loginController to "run" the database class file

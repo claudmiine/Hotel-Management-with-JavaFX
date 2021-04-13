@@ -7,36 +7,31 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
-   <left>
-      <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FEF5E7#FEF5E7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
+   <children>
+      <Button fx:id="loginButton" alignment="CENTER" layoutX="264.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="72.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Login" textFill="#3b2188" />
+      <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #D2E2F4#D2E2F4;">
          <children>
-            <ImageView fx:id="brandingImageView" fitHeight="494.0" fitWidth="400.0" layoutX="-171.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logoImageView" fitHeight="114.0" fitWidth="151.0" layoutX="225.0" onDragDetected="#initialize" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Hotel/images/hotel.jpg" />
+                  <Image url="@../images/logo.jpg" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-   </left>
-   <center>
-      <AnchorPane prefHeight="400.0" prefWidth="332.0" style="-fx-background-color: #FBF5DE #FBF5DE;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fx:id="logoImageView" fitHeight="78.0" fitWidth="132.0" layoutX="97.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Hotel/images/logohotel.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="26.0" layoutY="155.0" text="Username" />
-            <TextField fx:id="usernameField" layoutX="100.0" layoutY="151.0" promptText="Username" />
-            <Label layoutX="26.0" layoutY="200.0" text="Password" />
-            <Button fx:id="loginButton" alignment="CENTER" layoutX="51.0" layoutY="284.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #731C0C#731C0C;" text="Login" textFill="WHITE" />
-            <Button fx:id="cancelButton" alignment="CENTER" layoutX="51.0" layoutY="322.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #731C0C#731C0C;" text="Cancel" textFill="WHITE" />
-            <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="6.0" layoutY="256.0" onDragDetected="#loginButtonOnAction" prefHeight="17.0" prefWidth="270.0" textFill="#e91010" />
-            <PasswordField fx:id="passwordField" layoutX="100.0" layoutY="196.0" promptText="Password" />
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+      <Button layoutY="373.0" mnemonicParsing="false" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
+      <PasswordField layoutX="220.0" layoutY="244.0" promptText="Password" />
+      <TextField layoutX="220.0" layoutY="187.0" promptText="Username" />
+      <Label fx:id="loginMessageLabel" layoutX="275.0" layoutY="284.0" onDragDetected="#validateLogin" text="Message" />
+      <Label layoutX="275.0" layoutY="126.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN" textFill="#0b0b88">
+         <font>
+            <Font name="American Typewriter" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="170.0" text="Username" />
+      <Label layoutX="221.0" layoutY="227.0" text="Password" />
+   </children>
+</AnchorPane>
