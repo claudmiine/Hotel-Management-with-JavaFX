@@ -1,13 +1,18 @@
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.sql.ResultSet;
@@ -26,6 +31,10 @@ public class loginController implements Initializable {
     private TextField usernameField;
     @FXML
     private PasswordField passwordField;
+    @FXML
+    private Button backButton;
+    @FXML
+    private Button cancelButton;
 
     // This is telling the loginController class file to use the database file when you do database.conn.#####
     private Database database;
@@ -33,9 +42,10 @@ public class loginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        File logoFile = new File("images/logo.jpg");
+        File logoFile = new File("Hotel/images/logo.jpg");
         Image logoImage = new Image(logoFile.toURI().toString());
         logoImageView.setImage(logoImage);
+        loginMessageLabel.setText("");
 
     }
 
@@ -76,6 +86,26 @@ public class loginController implements Initializable {
             e.printStackTrace();
             e.getCause();
         }
+    }
+
+
+    public void backButtonOnAction(ActionEvent event){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+            Stage loginStage = new Stage();
+            loginStage.initStyle(StageStyle.UNDECORATED);
+            loginStage.setScene(new Scene(root, 600, 400));
+            loginStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+
+    public void cancelButtonOnAction(ActionEvent event) {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
 }
 

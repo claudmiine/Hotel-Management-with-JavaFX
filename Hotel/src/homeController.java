@@ -1,6 +1,7 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.EventObject;
 import java.util.ResourceBundle;
 import java.net.URL;
 
@@ -31,7 +33,7 @@ public class homeController implements Initializable {
     private ImageView DoubleRoom;
     @FXML
     private ImageView logoHotel;
-
+    private EventObject event;
 
 
     @Override
@@ -64,6 +66,7 @@ public class homeController implements Initializable {
     }
 
 
+
     public void goToLoginForm(){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
@@ -71,6 +74,7 @@ public class homeController implements Initializable {
             loginStage.initStyle(StageStyle.UNDECORATED);
             loginStage.setScene(new Scene(root, 600, 400));
             loginStage.show();
+//            ((Node)(event.getSource())).getScene().getWindow().hide();
         } catch(Exception e) {
             e.printStackTrace();
             e.getCause();

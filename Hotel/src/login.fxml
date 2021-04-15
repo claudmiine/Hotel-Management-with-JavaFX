@@ -9,23 +9,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FEF5E7#FEF5E7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
    <children>
       <Button fx:id="loginButton" alignment="CENTER" layoutX="264.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="72.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Login" textFill="#3b2188" />
       <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #D2E2F4#D2E2F4;">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="114.0" fitWidth="151.0" layoutX="225.0" onDragDetected="#initialize" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logoImageView" fitHeight="114.0" fitWidth="151.0" layoutX="225.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/logo.jpg" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutY="373.0" mnemonicParsing="false" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
-      <PasswordField layoutX="220.0" layoutY="244.0" promptText="Password" />
-      <TextField layoutX="220.0" layoutY="187.0" promptText="Username" />
-      <Label fx:id="loginMessageLabel" layoutX="275.0" layoutY="284.0" onDragDetected="#validateLogin" text="Message" />
+      <Button fx:id="backButton" layoutY="373.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
+      <PasswordField fx:id="passwordField" layoutX="220.0" layoutY="244.0" promptText="Password" />
+      <TextField fx:id="usernameField" layoutX="220.0" layoutY="187.0" promptText="Username" />
+      <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="275.0" layoutY="283.0" onDragDetected="#validateLogin" text="Message" />
       <Label layoutX="275.0" layoutY="126.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN" textFill="#0b0b88">
          <font>
             <Font name="American Typewriter" size="18.0" />
@@ -33,5 +32,6 @@
       </Label>
       <Label layoutX="220.0" layoutY="170.0" text="Username" />
       <Label layoutX="221.0" layoutY="227.0" text="Password" />
+      <Button fx:id="cancelButton" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" textFill="WHITE" />
    </children>
 </AnchorPane>

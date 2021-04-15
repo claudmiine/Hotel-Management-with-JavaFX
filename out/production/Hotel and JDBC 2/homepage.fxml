@@ -21,7 +21,7 @@
    <Text layoutX="211.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Twin room" />
    <Text layoutX="211.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Double room" />
    <Text layoutX="213.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Single room" />
-   <Button fx:id="loginButton" layoutX="441.0" layoutY="180.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #D1CFBE#D1CFBE;" text="Login" textFill="WHITE" />
+   <Button fx:id="loginButton" layoutX="441.0" layoutY="180.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #D1CFBE#D1CFBE;" text="Login" textFill="WHITE" />
    <Button fx:id="registerButton" layoutX="441.0" layoutY="239.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #456F8A#456F8A;" text="Register" textFill="#f7f4f4" />
    <ImageView fx:id="logoHotel" fitHeight="133.0" fitWidth="172.0" layoutX="426.0" pickOnBounds="true" preserveRatio="true">
       <Image url="@../../Hotel/images/logo.jpg" />
