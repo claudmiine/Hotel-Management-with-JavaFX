@@ -46,7 +46,8 @@ public class homeController implements Initializable {
     private Button bookDouble;
     @FXML
     private Label loginMessage;
-
+    @FXML
+    private Button contactus;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -117,8 +118,29 @@ public class homeController implements Initializable {
         }
     }
 
+    public void contactusButtonOnAction(ActionEvent event) {
+        goToContactUs();
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
+
+    public void goToContactUs(){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("contact.fxml"));
+            Stage loginStage = new Stage();
+            loginStage.initStyle(StageStyle.UNDECORATED);
+            loginStage.setScene(new Scene(root, 600, 400));
+            loginStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+
     public void loginToBook(ActionEvent e){
         loginMessage.setText("Please login or register first in order to make a booking.");
     }
+
 
 }
