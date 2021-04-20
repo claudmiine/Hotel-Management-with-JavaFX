@@ -21,13 +21,13 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="backButton" layoutY="373.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
+      <Button fx:id="backButton" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="57.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
       <PasswordField fx:id="passwordField" layoutX="220.0" layoutY="244.0" promptText="Password" />
       <TextField fx:id="usernameField" layoutX="220.0" layoutY="187.0" promptText="Username" />
-      <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="275.0" layoutY="283.0" onDragDetected="#validateLogin" text="Message" />
-      <Label layoutX="275.0" layoutY="126.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN" textFill="#0b0b88">
+      <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="150.0" layoutY="285.0" onDragDetected="#validateLogin" prefHeight="17.0" prefWidth="316.0" />
+      <Label alignment="CENTER" layoutX="264.0" layoutY="125.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN">
          <font>
-            <Font name="American Typewriter" size="18.0" />
+            <Font name="System Font" size="18.0" />
          </font>
       </Label>
       <Label layoutX="220.0" layoutY="170.0" text="Username" />

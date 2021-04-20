@@ -5,6 +5,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -33,7 +34,18 @@ public class homeController implements Initializable {
     private ImageView DoubleRoom;
     @FXML
     private ImageView logoHotel;
+    @FXML
+    private ImageView lobbyHotel;
+    @FXML
     private EventObject event;
+    @FXML
+    private Button bookTwin;
+    @FXML
+    private Button bookSignle;
+    @FXML
+    private Button bookDouble;
+    @FXML
+    private Label loginMessage;
 
 
     @Override
@@ -54,6 +66,10 @@ public class homeController implements Initializable {
         Image logoHotelImage = new Image(logoHotelFile.toURI().toString());
         logoHotel.setImage(logoHotelImage);
 
+        File lobbyHotelFile = new File("Hotel/images/lobbyHotel.jpg");
+        Image lobbyHotelImage = new Image(lobbyHotelFile.toURI().toString());
+        lobbyHotel.setImage(lobbyHotelImage);
+
     }
 
     public void cancelButtonOnAction(ActionEvent event) {
@@ -62,10 +78,11 @@ public class homeController implements Initializable {
     }
 
     public void loginButtonOnAction(ActionEvent event) {
+
         goToLoginForm();
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
-
-
 
     public void goToLoginForm(){
         try{
@@ -74,10 +91,34 @@ public class homeController implements Initializable {
             loginStage.initStyle(StageStyle.UNDECORATED);
             loginStage.setScene(new Scene(root, 600, 400));
             loginStage.show();
-//            ((Node)(event.getSource())).getScene().getWindow().hide();
         } catch(Exception e) {
             e.printStackTrace();
             e.getCause();
         }
     }
+
+    public void registerButtonOnAction(ActionEvent event){
+        goToRegisterForm();
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+
+    }
+
+    public void goToRegisterForm(){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            Stage loginStage = new Stage();
+            loginStage.initStyle(StageStyle.UNDECORATED);
+            loginStage.setScene(new Scene(root, 600, 400));
+            loginStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    public void loginToBook(ActionEvent e){
+        loginMessage.setText("Please login or register first in order to make a booking.");
+    }
+
 }
