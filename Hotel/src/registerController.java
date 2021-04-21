@@ -1,7 +1,6 @@
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,6 +15,7 @@ import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 
@@ -31,22 +31,24 @@ public class registerController implements Initializable {
     @FXML
     private Button cancelButton;
     @FXML
-    private TextField firstnameField;
+    private TextField firstnameTextField;
     @FXML
-    private TextField lastnameField;
+    private TextField lastnameTextField;
     @FXML
-    private TextField usernameField;
+    private TextField usernameTextField;
     @FXML
-    private TextField telephoneField;
+    private TextField telephoneTextField;
     @FXML
-    private TextField emailField;
+    private TextField emailTextField;
     @FXML
-    private TextField addressField;
+    private TextField addressTextField;
     @FXML
-    private TextField passwordField;
+    private PasswordField passwordTextField;
     @FXML
-    private TextField confirmPasswordField;
-
+    private PasswordField confirmPasswordTextField;
+    @FXML
+    private Label registerMessageLabel;
+    private Database database;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,11 +56,11 @@ public class registerController implements Initializable {
         File logoFile = new File("Hotel/images/logo.jpg");
         Image logoImage = new Image(logoFile.toURI().toString());
         logoHotel.setImage(logoImage);
-        labelMessage.setText("");
+//        registerMessagelabel.setText("");
 
     }
     public void confirmButtonOnAction(ActionEvent event) {
-        if (!usernameField.getText().isEmpty() && !passwordField.getText().isEmpty()) {
+        if (!usernameTextField.getText().isEmpty() && !passwordTextField.getText().isEmpty()) {
 //            validateLogin();
         } else {
             labelMessage.setText("Please enter username and password.");
@@ -85,4 +87,36 @@ public class registerController implements Initializable {
         stage.close();
     }
 
+    public void registerUser(){
+        database = new Database();
+//        DatabaseConnection connectNow = new DatabaseConnection();
+//        Connection connectDB = connectNow.getConnection();
+
+        String firstname = firstnameTextField.getText();
+        String lastname = lastnameTextField.getText();
+        String address = addressTextField.getText();
+        String telephone = telephoneTextField.getText();
+        String username = usernameTextField.getText();
+        String password = passwordTextField.getText();
+        String confirmpassword = confirmPasswordTextField.getText();
+        String email = emailTextField.getText();
+//        String payment = paymentChoice.getValue();
+
+        String insertFields = "INSERT INTO user (firstname, lastname, address, telephone, username, password, confirmpassword, email) VALUES ('";
+        String insertValues = firstname + "','" + lastname + "','" + address + "','" + telephone + "','" + username + "','" + password + "','" + confirmpassword + "','" + email + "')";
+        String insertToRegister = insertFields + insertValues;
+
+        try{
+//            database.statement = database.conn.createStatement();
+//            database.resultSet = database.statement.executeUpdate(insertToRegister);
+//            registerMessagelabel.setText("User has been registered successfully");
+            database.statement = database.conn.createStatement();
+            database.statement.executeUpdate(insertToRegister);
+            registerMessageLabel.setText("User has been registered successfully! Now please go back to log in.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 }
