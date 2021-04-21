@@ -11,27 +11,27 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FEF5E7#FEF5E7;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
    <children>
-      <Button fx:id="loginButton" alignment="CENTER" layoutX="264.0" layoutY="308.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="72.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Login" textFill="#3b2188" />
-      <AnchorPane prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #D2E2F4#D2E2F4;">
+      <ImageView fx:id="lobbyImageView" fitHeight="417.0" fitWidth="649.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/lobbyHotel.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="159.0" layoutY="74.0" prefHeight="270.0" prefWidth="298.0" style="-fx-background-color: #FEF5E7#FEF5E7;">
          <children>
-            <ImageView fx:id="logoImageView" fitHeight="114.0" fitWidth="151.0" layoutX="225.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/logo.jpg" />
-               </image>
-            </ImageView>
+            <Label alignment="CENTER" layoutX="105.0" layoutY="14.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN">
+               <font>
+                  <Font name="System Font" size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="58.0" layoutY="156.0" promptText="Password" />
+            <TextField fx:id="usernameField" layoutX="58.0" layoutY="93.0" promptText="Username" />
+            <Label layoutX="57.0" layoutY="76.0" text="Username" />
+            <Label layoutX="58.0" layoutY="139.0" text="Password" />
+            <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="-6.0" layoutY="193.0" onDragDetected="#validateLogin" prefHeight="17.0" prefWidth="316.0" textFill="RED" />
+            <Button fx:id="loginButton" alignment="CENTER" layoutX="102.0" layoutY="219.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="79.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Login" textFill="WHITE" />
          </children>
       </AnchorPane>
       <Button fx:id="backButton" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="57.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
-      <PasswordField fx:id="passwordField" layoutX="220.0" layoutY="244.0" promptText="Password" />
-      <TextField fx:id="usernameField" layoutX="220.0" layoutY="187.0" promptText="Username" />
-      <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="150.0" layoutY="285.0" onDragDetected="#validateLogin" prefHeight="17.0" prefWidth="316.0" />
-      <Label alignment="CENTER" layoutX="264.0" layoutY="125.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN">
-         <font>
-            <Font name="System Font" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="170.0" text="Username" />
-      <Label layoutX="221.0" layoutY="227.0" text="Password" />
       <Button fx:id="cancelButton" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" textFill="WHITE" />
    </children>
 </AnchorPane>

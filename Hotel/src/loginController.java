@@ -25,7 +25,7 @@ public class loginController implements Initializable {
     @FXML
     private Label loginMessageLabel;
     @FXML
-    private ImageView logoImageView;
+    private ImageView lobbyImageView;
     @FXML
     private TextField usernameField;
     @FXML
@@ -41,9 +41,9 @@ public class loginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        File logoFile = new File("Hotel/images/logo.jpg");
-        Image logoImage = new Image(logoFile.toURI().toString());
-        logoImageView.setImage(logoImage);
+        File lobbyFile = new File("Hotel/images/lobbyHotel.jpg");
+        Image lobbyImage = new Image(lobbyFile.toURI().toString());
+        lobbyImageView.setImage(lobbyImage);
         loginMessageLabel.setText("");
 
     }
@@ -73,7 +73,18 @@ public class loginController implements Initializable {
 
                 if ((username.equals(usernameField.getText())) &
                         (password.equals(passwordField.getText()))) {
-                    loginMessageLabel.setText("Congrats!");
+                    try{
+                        Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+                        Stage loginStage = new Stage();
+                        loginStage.initStyle(StageStyle.UNDECORATED);
+                        loginStage.setScene(new Scene(root, 600, 400));
+                        loginStage.show();
+                        Stage stage = (Stage) backButton.getScene().getWindow();
+                        stage.close();
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                        e.getCause();
+                    }
                     //make sure you use return; at the end of if statements otherwise it will show both the if and the else
                     return;
 

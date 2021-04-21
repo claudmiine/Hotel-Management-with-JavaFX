@@ -51,6 +51,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="backButton" alignment="CENTER" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="27.0" prefWidth="52.0" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Back" />
-      <Button fx:id="cancelButton" layoutX="551.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" />
+      <Button fx:id="cancelButton" layoutX="540.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" />
    </children>
 </AnchorPane>
