@@ -83,6 +83,7 @@ public class makeBookingController implements Initializable {
         LocalDate date = checkinDatePicker.getValue().plusDays(nights);
         checkoutDatePicker.setValue(date);
     }
+
     public void CalcPrice() {
         Integer nights = numberOfNightsCombo.getValue();
         String roomSize = roomTypeCombo.getValue();
