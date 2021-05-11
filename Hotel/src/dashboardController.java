@@ -90,4 +90,19 @@ public class dashboardController implements Initializable {
             e.getCause();
         }
     }
+
+    public void makeBookingOnAction(ActionEvent event) {
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("makeBooking.fxml"));
+            Stage loginStage = new Stage();
+            loginStage.initStyle(StageStyle.UNDECORATED);
+            loginStage.setScene(new Scene(root, 600, 400));
+            loginStage.show();
+            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            stage.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 }

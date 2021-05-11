@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="makeBookingController">
    <children>
       <AnchorPane layoutY="338.0" prefHeight="62.0" prefWidth="600.0" style="-fx-background-color: #D2E2F4#D2E2F4 #D2E2F4#D2E2F4;">
@@ -17,23 +16,25 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="23.0" text="Predictable price" />
             <Label fx:id="priceLabel" layoutX="122.0" layoutY="14.0" prefHeight="35.0" prefWidth="72.0" />
+            <Button layoutX="6.0" layoutY="18.0" mnemonicParsing="false" onAction="#CalcPrice" onDragDropped="#CalcPrice" text="Predictable price" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="85.0" layoutY="42.0" prefHeight="273.0" prefWidth="431.0" style="-fx-background-color: #D2E2F4#D2E2F4 #D2E2F4#D2E2F4;">
          <children>
-            <ComboBox fx:id="roomTypeCombo" layoutX="216.0" layoutY="25.0" prefWidth="150.0" />
+            <ComboBox fx:id="roomTypeCombo" layoutX="216.0" layoutY="27.0" prefWidth="150.0" />
             <ComboBox fx:id="paymentMethodCombo" layoutX="216.0" layoutY="210.0" prefWidth="150.0" />
             <ComboBox fx:id="breakfastCombo" layoutX="216.0" layoutY="160.0" prefWidth="150.0" />
-            <ComboBox fx:id="numberOfNightsCombo" layoutX="216.0" layoutY="115.0" prefWidth="150.0" />
-            <Label layoutX="106.0" layoutY="30.0" text="Room Type" />
+            <ComboBox fx:id="numberOfNightsCombo" layoutX="216.0" layoutY="68.0" onAction="#NightsAction" prefWidth="150.0" />
+            <Label layoutX="106.0" layoutY="32.0" text="Room Type" />
             <Label layoutX="106.0" layoutY="214.0" text="Payment Method" />
-            <DatePicker fx:id="checkinDatePicker" layoutX="216.0" layoutY="67.0" prefHeight="26.0" prefWidth="150.0" />
-            <Label layoutX="106.0" layoutY="80.0" text="Check-in Date" />
-            <Label layoutX="102.0" layoutY="128.0" text="Number of nights" />
+            <DatePicker fx:id="checkinDatePicker" layoutX="101.0" layoutY="117.0" prefHeight="26.0" prefWidth="102.0" />
+            <Label layoutX="14.0" layoutY="122.0" text="Check-in Date" />
+            <Label layoutX="105.0" layoutY="73.0" text="Number of nights" />
             <Label layoutX="102.0" layoutY="165.0" text="Breakfast Included" />
             <Button fx:id="bookButton" layoutX="379.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #90aac4#90aac4;" text="Book" textFill="WHITE" />
+            <DatePicker fx:id="checkoutDatePicker" layoutX="315.0" layoutY="117.0" prefHeight="26.0" prefWidth="102.0" />
+            <Label layoutX="216.0" layoutY="122.0" text="Check-out Date" />
          </children>
       </AnchorPane>
       <Label alignment="CENTER" layoutX="185.0" layoutY="14.0" prefHeight="19.0" prefWidth="231.0" text="Make a booking in the Luton hotel">
