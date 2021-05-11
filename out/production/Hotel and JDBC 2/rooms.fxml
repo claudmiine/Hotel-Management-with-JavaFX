@@ -29,25 +29,55 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="45.0" layoutY="143.0" text="TWIN ROOM" />
-      <Label layoutX="255.0" layoutY="143.0" text="DOUBLE ROOM" />
+      <Label layoutX="45.0" layoutY="143.0" text="TWIN ROOM">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="255.0" layoutY="143.0" text="DOUBLE ROOM">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <Label layoutX="201.0" layoutY="143.0" prefHeight="142.0" prefWidth="200.0" text="The double room has one double bed.The room has a TV, mini fridge and a nice place to read books.The price is £45 per night.The double room has one double bed.The room has a TV, mini fridge and a nice place to read books.The price is £45 per night." wrapText="true">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
-      <Label layoutX="470.0" layoutY="143.0" text="SINGLE ROOM" />
-      <Label layoutX="405.0" layoutY="140.0" prefHeight="119.0" prefWidth="191.0" text="A single room is a roomintended for one person to stay in.Choose from single rooms, all of which are comfortable. Available at a supplement of $25." wrapText="true">
+      <Label layoutX="470.0" layoutY="143.0" text="SINGLE ROOM">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="405.0" layoutY="140.0" prefHeight="119.0" prefWidth="191.0" text="A single room is a roomintended for one person to stay in.Choose from single rooms, all of which are comfortable. Available at a supplement of £25." wrapText="true">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
       <Button fx:id="backButton" layoutY="369.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A;" text="Back to Dashboard" textFill="WHITE" />
-      <Label layoutX="378.0" layoutY="276.0" text="*Every customer has a free wi-fi in room." />
-      <ImageView fx:id="logoHotel" fitHeight="101.0" fitWidth="163.0" layoutX="461.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="201.0" layoutY="369.0" text="*Every customer has a free wi-fi in room." />
+      <ImageView fx:id="logoHotel" fitHeight="92.0" fitWidth="122.0" layoutX="249.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo.jpg" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="39.0" layoutY="285.0" prefHeight="34.0" prefWidth="84.0" style="-fx-background-color: #b79d87#b79d87;" />
+      <Label layoutX="47.0" layoutY="292.0" text="£35/night">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="254.0" layoutY="286.0" prefHeight="34.0" prefWidth="84.0" style="-fx-background-color: #b79d87#b79d87;" />
+      <AnchorPane layoutX="459.0" layoutY="284.0" prefHeight="34.0" prefWidth="84.0" style="-fx-background-color: #b79d87#b79d87;">
+         <children>
+            <Label layoutX="9.0" layoutY="7.0" text="£25/night">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="262.0" layoutY="292.0" text="£45/night">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

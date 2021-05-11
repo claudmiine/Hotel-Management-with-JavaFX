@@ -87,18 +87,28 @@ public class makeBookingController implements Initializable {
     public void CalcPrice() {
         Integer nights = numberOfNightsCombo.getValue();
         String roomSize = roomTypeCombo.getValue();
+        String breakfast = breakfastCombo.getValue();
 
-        if (roomSize.equals("Single")) {
+        if (roomSize.equals("Single") && breakfast.equals("Yes")) {
+            int calculation = (nights * (20 + 5));
+            priceLabel.setText("£" + calculation);
+        } else {
             int calculation = (nights * 20);
             priceLabel.setText("£" + calculation);
         }
 
-        if (roomSize.equals("Double")) {
+        if (roomSize.equals("Double") && breakfast.equals("Yes")) {
+            int calculation = (nights * (45 + 5));
+            priceLabel.setText("£" + calculation);
+        } else {
             int calculation = (nights * 45);
             priceLabel.setText("£" + calculation);
         }
 
-        if (roomSize.equals("Twin")) {
+        if (roomSize.equals("Twin") && breakfast.equals("Yes")) {
+            int calculation = (nights * (35 + 5));
+            priceLabel.setText("£" + calculation);
+        } else {
             int calculation = (nights * 35);
             priceLabel.setText("£" + calculation);
         }

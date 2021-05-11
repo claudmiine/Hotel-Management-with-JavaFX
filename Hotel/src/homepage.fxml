@@ -41,7 +41,7 @@
    <Label layoutX="27.0" layoutY="302.0" text="Twin room" />
    <Label layoutX="147.0" layoutY="302.0" text="Single room" />
    <Label layoutX="283.0" layoutY="302.0" text="Double room" />
-   <Label layoutX="27.0" layoutY="319.0" text="Price starts at 15£/night.">
+   <Label layoutX="27.0" layoutY="319.0" text="Price starts at 35£/night.">
       <font>
          <Font size="10.0" />
       </font>
@@ -51,7 +51,7 @@
          <Font size="10.0" />
       </font>
    </Label>
-   <Label layoutX="283.0" layoutY="319.0" text="Price starts at 30£/night.">
+   <Label layoutX="283.0" layoutY="319.0" text="Price starts at 45£/night.">
       <font>
          <Font size="10.0" />
       </font>

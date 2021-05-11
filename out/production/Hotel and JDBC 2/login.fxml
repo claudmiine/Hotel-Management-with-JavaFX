@@ -18,17 +18,17 @@
       </ImageView>
       <AnchorPane layoutX="159.0" layoutY="74.0" prefHeight="270.0" prefWidth="298.0" style="-fx-background-color: #FEF5E7#FEF5E7;">
          <children>
-            <Label alignment="CENTER" layoutX="105.0" layoutY="14.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN">
+            <Label alignment="CENTER" layoutX="119.0" layoutY="14.0" prefHeight="26.0" prefWidth="72.0" text="LOGIN">
                <font>
                   <Font name="System Font" size="18.0" />
                </font>
             </Label>
-            <PasswordField fx:id="passwordField" layoutX="58.0" layoutY="156.0" promptText="Password" />
-            <TextField fx:id="usernameField" layoutX="58.0" layoutY="93.0" promptText="Username" />
-            <Label layoutX="57.0" layoutY="76.0" text="Username" />
-            <Label layoutX="58.0" layoutY="139.0" text="Password" />
+            <PasswordField fx:id="passwordField" layoutX="73.0" layoutY="156.0" promptText="Password" />
+            <TextField fx:id="usernameField" layoutX="73.0" layoutY="93.0" promptText="Username" />
+            <Label layoutX="124.0" layoutY="76.0" text="Username" />
+            <Label layoutX="125.0" layoutY="135.0" text="Password" />
             <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="-6.0" layoutY="193.0" onDragDetected="#validateLogin" prefHeight="17.0" prefWidth="316.0" textFill="RED" />
-            <Button fx:id="loginButton" alignment="CENTER" layoutX="102.0" layoutY="219.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="79.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Login" textFill="WHITE" />
+            <Button fx:id="loginButton" alignment="CENTER" layoutX="113.0" layoutY="210.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="79.0" style="-fx-background-color: #90aac4#90aac4 #90aac4#90aac4;" text="Login" textFill="WHITE" />
          </children>
       </AnchorPane>
       <Button fx:id="backButton" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="57.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />

@@ -17,7 +17,7 @@
                </font>
             </Label>
             <Label fx:id="priceLabel" layoutX="122.0" layoutY="14.0" prefHeight="35.0" prefWidth="72.0" />
-            <Button layoutX="6.0" layoutY="18.0" mnemonicParsing="false" onAction="#CalcPrice" onDragDropped="#CalcPrice" text="Predictable price" />
+            <Button layoutX="6.0" layoutY="18.0" mnemonicParsing="false" onAction="#CalcPrice" onDragDropped="#CalcPrice" style="-fx-background-color: #90aac4#90aac4 #90aac4#90aac4;" text="Predictable price" textFill="WHITE" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="85.0" layoutY="42.0" prefHeight="273.0" prefWidth="431.0" style="-fx-background-color: #D2E2F4#D2E2F4 #D2E2F4#D2E2F4;">
