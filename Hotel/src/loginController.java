@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
 
+import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.io.File;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,6 +22,9 @@ import java.util.ResourceBundle;
 import java.net.URL;
 
 public class loginController implements Initializable {
+    public static String firstname;
+    public static String username;
+    public static Integer user_id;
 
     @FXML
     private Label loginMessageLabel;
@@ -34,6 +38,7 @@ public class loginController implements Initializable {
     private Button backButton;
     @FXML
     private Button cancelButton;
+
 
     // This is telling the loginController class file to use the database file when you do database.conn.#####
     private Database database;
@@ -70,7 +75,11 @@ public class loginController implements Initializable {
             while (database.resultSet.next()) {
                 String username = database.resultSet.getString(2);
                 String password = database.resultSet.getString(3);
-
+                String firstname= database.resultSet.getString(5);
+                int user_id = database.resultSet.getInt(1);
+                loginController.username= username;
+                loginController.user_id= user_id;
+                loginController.firstname= firstname;
                 if ((username.equals(usernameField.getText())) &
                         (password.equals(passwordField.getText()))) {
                     try{
@@ -81,6 +90,8 @@ public class loginController implements Initializable {
                         loginStage.show();
                         Stage stage = (Stage) backButton.getScene().getWindow();
                         stage.close();
+
+
                     } catch(Exception e) {
                         e.printStackTrace();
                         e.getCause();

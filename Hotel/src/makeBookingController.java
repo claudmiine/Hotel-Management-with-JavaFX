@@ -24,15 +24,15 @@ public class makeBookingController implements Initializable {
     @FXML
     private Label priceLabel;
     @FXML
-    private JComboBox roomTypeCombo;
+    private JComboBox<String> roomTypeCombo;
     @FXML
     private JComboBox checkinDatePicker;
     @FXML
-    private JComboBox numberOfNightsCombo;
+    private JComboBox<Integer> numberOfNightsCombo;
     @FXML
-    private JComboBox breakfastCombo;
+    private JComboBox<String> breakfastCombo;
     @FXML
-    private JComboBox paymentMethodCombo;
+    private JComboBox<String> paymentMethodCombo;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -4,6 +4,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -30,6 +31,11 @@ public class dashboardController implements Initializable {
     private Button logoutButton;
     @FXML
     private Button cancelButton;
+    @FXML
+    private Label welcomeLabel;
+
+    private Integer user_id;
+    private String firstname;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,6 +46,11 @@ public class dashboardController implements Initializable {
         File lobbyHotelFile = new File("Hotel/images/lobbyHotel.jpg");
         Image lobbyHotelImage = new Image(lobbyHotelFile.toURI().toString());
         lobbyBackground.setImage(lobbyHotelImage);
+
+        user_id= loginController.user_id;
+        firstname= loginController.firstname;
+        welcomeLabel.setText("Welcome " + firstname + "!");
+
     }
 
     public void logoutButtonOnAction(ActionEvent event){
