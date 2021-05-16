@@ -53,7 +53,7 @@
       </Label>
       <Button fx:id="backButton" layoutY="369.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="34.0" prefWidth="141.0" style="-fx-background-color: #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A;" text="Back to Dashboard" textFill="WHITE" />
       <Label layoutX="201.0" layoutY="369.0" text="*Every customer has a free wi-fi in room." />
-      <ImageView fx:id="logoHotel" fitHeight="92.0" fitWidth="122.0" layoutX="249.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logoHotel" fitHeight="85.0" fitWidth="97.0" layoutX="501.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo.jpg" />
          </image>

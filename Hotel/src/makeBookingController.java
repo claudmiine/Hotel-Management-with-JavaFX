@@ -89,29 +89,54 @@ public class makeBookingController implements Initializable {
         String roomSize = roomTypeCombo.getValue();
         String breakfast = breakfastCombo.getValue();
 
+//        if (roomSize.equals("Single") && breakfast.equals("Yes")) {
+//            int calculation = (nights * (20 + 5));
+//            priceLabel.setText("£" + calculation);
+//        } else {
+//            int calculation = (nights * 20);
+//            priceLabel.setText("£" + calculation);
+//        }
+//
+//        if (roomSize.equals("Double") && breakfast.equals("Yes")) {
+//            int calculation = (nights * (45 + 5));
+//            priceLabel.setText("£" + calculation);
+//        } else {
+//            int calculation = (nights * 45);
+//            priceLabel.setText("£" + calculation);
+//        }
+//
+//        if (roomSize.equals("Twin") && breakfast.equals("Yes")) {
+//            int calculation = (nights * (35 + 5));
+//            priceLabel.setText("£" + calculation);
+//        } else {
+//            int calculation = (nights * 35);
+//            priceLabel.setText("£" + calculation);
+//        }
+
         if (roomSize.equals("Single") && breakfast.equals("Yes")) {
             int calculation = (nights * (20 + 5));
             priceLabel.setText("£" + calculation);
-        } else {
+        } else if((roomSize.equals("Single") && breakfast.equals("No")) ) {
             int calculation = (nights * 20);
             priceLabel.setText("£" + calculation);
-        }
-
-        if (roomSize.equals("Double") && breakfast.equals("Yes")) {
+        } else if (roomSize.equals("Double") && breakfast.equals("Yes")) {
             int calculation = (nights * (45 + 5));
             priceLabel.setText("£" + calculation);
-        } else {
+        } else if (roomSize.equals("Double") && breakfast.equals("No")){
             int calculation = (nights * 45);
             priceLabel.setText("£" + calculation);
-        }
-
-        if (roomSize.equals("Twin") && breakfast.equals("Yes")) {
+        } else if (roomSize.equals("Twin") && breakfast.equals("Yes")) {
             int calculation = (nights * (35 + 5));
             priceLabel.setText("£" + calculation);
-        } else {
+        } else if (roomSize.equals("Twin") && breakfast.equals("No")){
             int calculation = (nights * 35);
             priceLabel.setText("£" + calculation);
         }
+
+
+
+
+
     }
 
     public void cancelButtonOnAction(ActionEvent event) {

@@ -22,7 +22,7 @@
                   <Image url="@../images/logo.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="welcomeLabel" layoutX="53.0" layoutY="104.0" prefHeight="25.0" prefWidth="154.0">
+            <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="51.0" layoutY="101.0" prefHeight="25.0" prefWidth="154.0">
                <font>
                   <Font size="14.0" />
                </font>
