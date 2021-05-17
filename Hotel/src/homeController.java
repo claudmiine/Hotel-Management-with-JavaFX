@@ -41,7 +41,7 @@ public class homeController implements Initializable {
     @FXML
     private Button bookTwin;
     @FXML
-    private Button bookSignle;
+    private Button bookSingle;
     @FXML
     private Button bookDouble;
     @FXML

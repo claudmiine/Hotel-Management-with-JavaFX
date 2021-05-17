@@ -132,11 +132,6 @@ public class makeBookingController implements Initializable {
             int calculation = (nights * 35);
             priceLabel.setText("£" + calculation);
         }
-
-
-
-
-
     }
 
     public void cancelButtonOnAction(ActionEvent event) {

@@ -25,14 +25,32 @@ public class contactController implements Initializable {
     private Button backButton;
     @FXML
     private ImageView lobbyBackground;
+    @FXML
+    private ImageView callImage;
+    @FXML
+    private ImageView emailImage;
+    @FXML
+    private ImageView locationImage;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         File logoFile = new File("Hotel/images/lobbyHotel.jpg");
-        Image logoImage = new Image(logoFile.toURI().toString());
-        lobbyBackground.setImage(logoImage);
+        Image lobbyImage = new Image(logoFile.toURI().toString());
+        lobbyBackground.setImage(lobbyImage);
+
+        File callFile = new File("Hotel/images/call.png");
+        Image callImageView = new Image(callFile.toURI().toString());
+        callImage.setImage(callImageView);
+
+        File locationFile = new File("Hotel/images/placeholder.png");
+        Image locationImageView = new Image(locationFile.toURI().toString());
+        locationImage.setImage(locationImageView);
+
+        File emailFile = new File("Hotel/images/contact.png");
+        Image emailImageView = new Image(emailFile.toURI().toString());
+        emailImage.setImage(emailImageView);
 
     }
 

@@ -21,12 +21,12 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <ImageView fitHeight="46.0" fitWidth="35.0" layoutX="17.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="callImage" fitHeight="46.0" fitWidth="35.0" layoutX="17.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/call.png" />
                </image>
             </ImageView>
-            <Label layoutX="78.0" layoutY="81.0" prefHeight="17.0" prefWidth="101.0" text="+44 712345678">
+            <Label layoutX="78.0" layoutY="91.0" prefHeight="17.0" prefWidth="101.0" text="+44 712345678">
                <font>
                   <Font size="14.0" />
                </font>
@@ -36,21 +36,21 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="17.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="emailImage" fitHeight="35.0" fitWidth="35.0" layoutX="17.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/contact.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="35.0" layoutX="17.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+            <Label layoutX="78.0" layoutY="175.0" prefHeight="56.0" prefWidth="95.0" text="Luton road            LU1 3QY Luton Bedfordshire UK" wrapText="true" />
+            <Label layoutX="84.0" layoutY="50.0" text="Contact us 24/7" />
+            <ImageView fx:id="locationImage" fitHeight="49.0" fitWidth="45.0" layoutX="12.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/placeholder.png" />
                </image>
             </ImageView>
-            <Label layoutX="78.0" layoutY="175.0" prefHeight="56.0" prefWidth="95.0" text="Luton road            LU1 3QY Luton Bedfordshire UK" wrapText="true" />
-            <Label layoutX="84.0" layoutY="50.0" text="Contact us 24/7" />
          </children>
       </AnchorPane>
       <Button fx:id="backButton" alignment="CENTER" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="27.0" prefWidth="52.0" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Back" />
-      <Button fx:id="cancelButton" layoutX="540.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" />
+      <Button fx:id="cancelButton" layoutX="547.0" layoutY="375.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" />
    </children>
 </AnchorPane>
