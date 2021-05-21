@@ -89,8 +89,6 @@ public class registerController implements Initializable {
 
     public void registerUser(){
         database = new Database();
-//        DatabaseConnection connectNow = new DatabaseConnection();
-//        Connection connectDB = connectNow.getConnection();
 
         String firstname = firstnameTextField.getText();
         String lastname = lastnameTextField.getText();
@@ -100,7 +98,6 @@ public class registerController implements Initializable {
         String password = passwordTextField.getText();
         String confirmpassword = confirmPasswordTextField.getText();
         String email = emailTextField.getText();
-//        String payment = paymentChoice.getValue();
 
         String insertFields = "INSERT INTO user (firstname, lastname, address, telephone, username, password, confirmpassword, email) VALUES ('";
         String insertValues = firstname + "','" + lastname + "','" + address + "','" + telephone + "','" + username + "','" + password + "','" + confirmpassword + "','" + email + "')";

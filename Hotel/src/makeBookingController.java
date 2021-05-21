@@ -28,6 +28,10 @@ public class makeBookingController implements Initializable {
     @FXML
     private Label priceLabel;
     @FXML
+    private Label confirmationLabel;
+    @FXML
+    private Label errorLabel;
+    @FXML
     private ComboBox<String> roomTypeCombo;
     @FXML
     private DatePicker checkinDatePicker;
@@ -45,19 +49,21 @@ public class makeBookingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         priceLabel.setText("");
+        confirmationLabel.setText("");
+        errorLabel.setText("");
         this.user_id = loginController.user_id;
         roomTypeCombo.getItems().removeAll(roomTypeCombo.getItems());
         checkoutDatePicker.setDisable(true);
         roomTypeCombo.getItems().addAll("Single", "Double", "Twin");
-        roomTypeCombo.getSelectionModel().select("Select Room Size");
+        roomTypeCombo.getSelectionModel().select("");
 
         numberOfNightsCombo.getItems().removeAll(numberOfNightsCombo.getItems());
         numberOfNightsCombo.getItems().addAll(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
-        numberOfNightsCombo.getSelectionModel().select(0);
+//        numberOfNightsCombo.getSelectionModel().select();
 
         breakfastCombo.getItems().removeAll(breakfastCombo.getItems());
         breakfastCombo.getItems().addAll("Yes", "No");
-        breakfastCombo.getSelectionModel().select("Food service?");
+        breakfastCombo.getSelectionModel().select("");
 
         try {
             database = new Database();
@@ -66,11 +72,10 @@ public class makeBookingController implements Initializable {
             database.resultSet = database.statement.executeQuery("SELECT * FROM user WHERE user_id =" + user_id);
 
             while (database.resultSet.next()) {
-//                String payment = database.resultSet.getString(10);
 
                 paymentMethodCombo.getItems().removeAll(paymentMethodCombo.getItems());
                 paymentMethodCombo.getItems().addAll( "Pay On Arrival", "Visa", "Mastercard");
-                paymentMethodCombo.getSelectionModel().select("Select Payment Method");
+                paymentMethodCombo.getSelectionModel().select("");
 
             }
         } catch (Exception e) {
@@ -88,30 +93,6 @@ public class makeBookingController implements Initializable {
         Integer nights = numberOfNightsCombo.getValue();
         String roomSize = roomTypeCombo.getValue();
         String breakfast = breakfastCombo.getValue();
-
-//        if (roomSize.equals("Single") && breakfast.equals("Yes")) {
-//            int calculation = (nights * (20 + 5));
-//            priceLabel.setText("£" + calculation);
-//        } else {
-//            int calculation = (nights * 20);
-//            priceLabel.setText("£" + calculation);
-//        }
-//
-//        if (roomSize.equals("Double") && breakfast.equals("Yes")) {
-//            int calculation = (nights * (45 + 5));
-//            priceLabel.setText("£" + calculation);
-//        } else {
-//            int calculation = (nights * 45);
-//            priceLabel.setText("£" + calculation);
-//        }
-//
-//        if (roomSize.equals("Twin") && breakfast.equals("Yes")) {
-//            int calculation = (nights * (35 + 5));
-//            priceLabel.setText("£" + calculation);
-//        } else {
-//            int calculation = (nights * 35);
-//            priceLabel.setText("£" + calculation);
-//        }
 
         if (roomSize.equals("Single") && breakfast.equals("Yes")) {
             int calculation = (nights * (20 + 5));
@@ -132,6 +113,49 @@ public class makeBookingController implements Initializable {
             int calculation = (nights * 35);
             priceLabel.setText("£" + calculation);
         }
+    }
+
+    public void makeBooking(ActionEvent event) {
+        database = new Database();
+        Integer user_id = loginController.user_id;
+
+        String room_type = roomTypeCombo.getValue();
+        Integer nights = numberOfNightsCombo.getValue();
+        LocalDate checkinDate = checkinDatePicker.getValue();
+        LocalDate checkoutDate = checkoutDatePicker.getValue();
+        String breakfast = breakfastCombo.getValue();
+        String payment = paymentMethodCombo.getValue();
+        String total_cost = priceLabel.getText();
+
+
+        String insertFields = "INSERT INTO booking (user_id, room_type, nights, checkinDate, checkoutDate, breakfast, total_cost, payment) VALUES ('";
+        String insertValues = user_id + "','" + room_type + "','" + nights + "','" + checkinDate + "','" + checkoutDate + "','" + breakfast + "','" + total_cost + "','" + payment + "')";
+        String insertToBooking = insertFields + insertValues;
+
+        if (!room_type.isEmpty()) {
+            try{
+                database.statement = database.conn.createStatement();
+                database.statement.executeUpdate(insertToBooking);
+                confirmationLabel.setText("Successfully made a booking!");
+                errorLabel.setText("");
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.getCause();
+            }
+            return;
+        } else {
+            errorLabel.setText("Please fill all the fields.");
+        }
+
+//        try{
+//            database.statement = database.conn.createStatement();
+//            database.statement.executeUpdate(insertToBooking);
+//            confirmationLabel.setText("Successfully made a booking!");
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            e.getCause();
+//        }
     }
 
     public void cancelButtonOnAction(ActionEvent event) {
