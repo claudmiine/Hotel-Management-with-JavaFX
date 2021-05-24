@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D2E2F4#D2E2F4 #D2E2F4#D2E2F4;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myBookingsController">
+   <children>
+      <ImageView fx:id="logoImageView" fitHeight="103.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="203.0" layoutY="25.0" text="My previous bookings" textFill="#020202">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ListView fx:id="listViewBookings" layoutX="69.0" layoutY="124.0" onEditStart="#getCustomerBooking" prefHeight="200.0" prefWidth="491.0" />
+   </children>
+</AnchorPane>

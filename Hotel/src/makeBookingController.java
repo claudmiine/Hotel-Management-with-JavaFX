@@ -58,7 +58,7 @@ public class makeBookingController implements Initializable {
         roomTypeCombo.getSelectionModel().select("");
 
         numberOfNightsCombo.getItems().removeAll(numberOfNightsCombo.getItems());
-        numberOfNightsCombo.getItems().addAll(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
+        numberOfNightsCombo.getItems().addAll( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
 //        numberOfNightsCombo.getSelectionModel().select();
 
         breakfastCombo.getItems().removeAll(breakfastCombo.getItems());
