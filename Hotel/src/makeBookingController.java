@@ -114,8 +114,8 @@ public class makeBookingController implements Initializable {
 
     public void makeBooking(ActionEvent event) {
         database = new Database();
-        Integer user_id = loginController.user_id;
 
+        Integer user_id = loginController.user_id;
         String room_type = roomTypeCombo.getValue();
         Integer nights = numberOfNightsCombo.getValue();
         LocalDate checkinDate = checkinDatePicker.getValue();
