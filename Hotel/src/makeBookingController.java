@@ -19,12 +19,9 @@ import javax.swing.*;
 
 
 public class makeBookingController implements Initializable {
-    @FXML
-    private Button backButton;
+
     @FXML
     private Button cancelButton;
-    @FXML
-    private Button bookButton;
     @FXML
     private Label priceLabel;
     @FXML
