@@ -3,31 +3,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
-
 import java.io.File;
 import java.net.URL;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 
 
 public class registerController implements Initializable {
     @FXML
-    private Button backButton;
-    @FXML
     private ImageView logoHotel;
-    @FXML
-    private Label labelMessage;
-    @FXML
-    private Button confirmButton;
     @FXML
     private Button cancelButton;
     @FXML
@@ -56,16 +45,10 @@ public class registerController implements Initializable {
         File logoFile = new File("Hotel/images/logo.jpg");
         Image logoImage = new Image(logoFile.toURI().toString());
         logoHotel.setImage(logoImage);
-//        registerMessagelabel.setText("");
+
 
     }
-    public void confirmButtonOnAction(ActionEvent event) {
-        if (!usernameTextField.getText().isEmpty() && !passwordTextField.getText().isEmpty()) {
-//            validateLogin();
-        } else {
-            labelMessage.setText("Please enter username and password.");
-        }
-    }
+
     public void backButtonOnAction(ActionEvent event){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
@@ -87,7 +70,7 @@ public class registerController implements Initializable {
         stage.close();
     }
 
-    public void registerUser(){
+    public void registerUser() {
         database = new Database();
 
         String firstname = firstnameTextField.getText();
@@ -103,17 +86,20 @@ public class registerController implements Initializable {
         String insertValues = firstname + "','" + lastname + "','" + address + "','" + telephone + "','" + username + "','" + password + "','" + confirmpassword + "','" + email + "')";
         String insertToRegister = insertFields + insertValues;
 
-        try{
-//            database.statement = database.conn.createStatement();
-//            database.resultSet = database.statement.executeUpdate(insertToRegister);
-//            registerMessagelabel.setText("User has been registered successfully");
-            database.statement = database.conn.createStatement();
-            database.statement.executeUpdate(insertToRegister);
-            registerMessageLabel.setText("User has been registered successfully! Now please go back to log in.");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            e.getCause();
-        }
+        if (!usernameTextField.getText().isEmpty() && !passwordTextField.getText().isEmpty()) {
+            try {
+                database.statement = database.conn.createStatement();
+                database.statement.executeUpdate(insertToRegister);
+                registerMessageLabel.setText("User has been registered successfully! Now please go back to log in.");
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill all the fields. ");
+                alert.show();
+                e.printStackTrace();
+                e.getCause();
+            }
+        } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill all the fields. ");
+                alert.show();
+            }
     }
 }

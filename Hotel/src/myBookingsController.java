@@ -34,6 +34,20 @@ public class myBookingsController implements Initializable {
     private TableColumn<Booking,Integer> bookingIdColumn;
     @FXML
     private TableColumn<Booking, LocalDate> checkInColumn;
+    @FXML
+    private TableColumn<Booking, LocalDate> checkOutColumn;
+    @FXML
+    private TableColumn<Booking, LocalDate> nightsColumn;
+    @FXML
+    private TableColumn<Booking, LocalDate> roomTypeColumn;
+    @FXML
+    private TableColumn<Booking, String> breakfastColumn;
+    @FXML
+    private TableColumn<Booking, String> totalCostColumn;
+    @FXML
+    private TableColumn<Booking,String> paymentColumn;
+
+
 
 
 
@@ -49,6 +63,13 @@ public class myBookingsController implements Initializable {
 
         bookingIdColumn.setCellValueFactory(new PropertyValueFactory<>("booking_id"));
         checkInColumn.setCellValueFactory(new PropertyValueFactory<>("check_in_date"));
+        checkOutColumn.setCellValueFactory(new PropertyValueFactory<>("check_out_date"));
+        nightsColumn.setCellValueFactory(new PropertyValueFactory<>("nights"));
+        roomTypeColumn.setCellValueFactory(new PropertyValueFactory<>("room_type"));
+        totalCostColumn.setCellValueFactory(new PropertyValueFactory<>("total_cost"));
+        paymentColumn.setCellValueFactory(new PropertyValueFactory<>("payment"));
+        breakfastColumn.setCellValueFactory(new PropertyValueFactory<>("breakfast"));
+
     }
 
     public void getCustomerBooking(){
@@ -73,7 +94,8 @@ public class myBookingsController implements Initializable {
                         database.resultSet.getInt("nights"),
                         database.resultSet.getString("room_type"),
                         database.resultSet.getString("total_cost"),
-                        database.resultSet.getString("payment")
+                        database.resultSet.getString("payment"),
+                        database.resultSet.getString("breakfast")
                 ));
 //
 
@@ -85,6 +107,31 @@ public class myBookingsController implements Initializable {
         }
 
     }
+
+    public void deleteBooking() {
+
+        Booking selectedBooking = (Booking) tableBooking.getSelectionModel().getSelectedItem();
+        if (selectedBooking != null) {
+            int booking_id = selectedBooking.getBooking_id();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are You sure to delete booking with id " + booking_id + "?" , ButtonType.YES, ButtonType.CANCEL);
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                try {
+                    Database database = new Database();
+                    database.statement = database.conn.createStatement();
+                    database.statement.executeUpdate("DELETE FROM booking WHERE booking_id = " + booking_id);
+                } catch (Exception e) {
+                    e.getStackTrace();
+                    e.getCause();
+                }
+                getCustomerBooking();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "No booking selected.");
+            alert.show();
+        }
+    }
+
 
     public void backButtonOnAction(ActionEvent event){
         try {

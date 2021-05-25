@@ -9,24 +9,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D2E2F4#D2E2F4 #D2E2F4#D2E2F4;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myBookingsController">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #D2E2F4#D2E2F4 #D2E2F4#D2E2F4;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myBookingsController">
    <children>
-      <ImageView fx:id="logoImageView" fitHeight="112.0" fitWidth="143.0" layoutX="456.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logoImageView" fitHeight="112.0" fitWidth="143.0" layoutX="551.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/logo.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="customerBookingLabel" alignment="CENTER" layoutX="100.0" layoutY="14.0" prefHeight="94.0" prefWidth="362.0" textFill="#020202">
+      <Label fx:id="customerBookingLabel" alignment="CENTER" layoutX="164.0" layoutY="49.0" prefHeight="94.0" prefWidth="362.0" textFill="#020202">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Button fx:id="backButton" alignment="CENTER" layoutY="-3.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="34.0" prefWidth="59.0" style="-fx-background-color: #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A #456F8A#456F8A;" text="Back" textFill="WHITE" />
-      <TableView fx:id="tableBooking" layoutX="14.0" layoutY="142.0" prefHeight="244.0" prefWidth="569.0">
+      <TableView fx:id="tableBooking" layoutX="19.0" layoutY="147.0" prefHeight="194.0" prefWidth="646.0">
         <columns>
-          <TableColumn fx:id="bookingIdColumn" prefWidth="84.0" text="C1" />
-          <TableColumn fx:id="checkInColumn" prefWidth="89.0" text="C2" />
+          <TableColumn fx:id="bookingIdColumn" prefWidth="68.0" text="Booking ID" />
+          <TableColumn fx:id="checkInColumn" prefWidth="79.90689849853516" text="Check In" />
+            <TableColumn fx:id="checkOutColumn" prefWidth="87.09312438964844" text="Check Out" />
+            <TableColumn fx:id="nightsColumn" prefWidth="76.80340576171875" text="Nights" />
+            <TableColumn fx:id="roomTypeColumn" prefWidth="61.69659423828125" text="Room" />
+            <TableColumn fx:id="totalCostColumn" prefWidth="70.71173095703125" text="Total Cost" />
+            <TableColumn fx:id="paymentColumn" prefWidth="94.2882080078125" text="Payment" />
+            <TableColumn fx:id="breakfastColumn" prefWidth="100.593017578125" text="Food Service" />
         </columns>
       </TableView>
+      <Button fx:id="cancelButton" layoutX="563.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteBooking" style="-fx-background-color: #d2ca81#d2ca81;" text="Cancel Booking" textFill="WHITE" />
    </children>
 </AnchorPane>

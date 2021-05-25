@@ -9,12 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
-
 import java.io.File;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.EventObject;
 import java.util.ResourceBundle;
 import java.net.URL;
 

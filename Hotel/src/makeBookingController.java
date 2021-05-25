@@ -10,12 +10,9 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
-import java.io.File;
 import java.net.URL;
-import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import javax.swing.*;
 
 
 public class makeBookingController implements Initializable {
@@ -56,7 +53,7 @@ public class makeBookingController implements Initializable {
 
         numberOfNightsCombo.getItems().removeAll(numberOfNightsCombo.getItems());
         numberOfNightsCombo.getItems().addAll( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
-//        numberOfNightsCombo.getSelectionModel().select();
+
 
         breakfastCombo.getItems().removeAll(breakfastCombo.getItems());
         breakfastCombo.getItems().addAll("Yes", "No");
@@ -143,16 +140,6 @@ public class makeBookingController implements Initializable {
         } else {
             errorLabel.setText("Please fill all the fields.");
         }
-
-//        try{
-//            database.statement = database.conn.createStatement();
-//            database.statement.executeUpdate(insertToBooking);
-//            confirmationLabel.setText("Successfully made a booking!");
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            e.getCause();
-//        }
     }
 
     public void cancelButtonOnAction(ActionEvent event) {

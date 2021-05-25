@@ -11,9 +11,10 @@ public class Booking {
     private SimpleStringProperty room_type;
     private SimpleStringProperty total_cost;
     private SimpleStringProperty payment;
+    private SimpleStringProperty breakfast;
 
 
-    Booking(int booking_id, int user_id, LocalDate check_in_date, LocalDate check_out_date, int nights, String room_type, String total_cost, String payment) {
+    Booking(int booking_id, int user_id, LocalDate check_in_date, LocalDate check_out_date, int nights, String room_type, String total_cost, String payment, String breakfast) {
         this.booking_id = new SimpleIntegerProperty(booking_id);
         this.user_id = new SimpleIntegerProperty(user_id);
         this.check_in_date = new SimpleObjectProperty(check_in_date);
@@ -22,6 +23,7 @@ public class Booking {
         this.room_type = new SimpleStringProperty(room_type);
         this.total_cost = new SimpleStringProperty(total_cost);
         this.payment = new SimpleStringProperty(payment);
+        this.breakfast = new SimpleStringProperty(breakfast);
     }
 
     public int getBooking_id() {
@@ -119,4 +121,17 @@ public class Booking {
     public void setPayment(String payment) {
         this.payment.set(payment);
     }
+
+    public String getBreakfast() {
+        return breakfast.get();
+    }
+
+    public SimpleStringProperty breakfastProperty() {
+        return breakfast;
+    }
+
+    public void setBreakfast(String breakfast) {
+        this.breakfast.set(breakfast);
+    }
+
 }

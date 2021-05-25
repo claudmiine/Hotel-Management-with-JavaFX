@@ -10,10 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
-
 import java.io.File;
 import java.util.ResourceBundle;
-
 import java.net.URL;
 
 public class dashboardController implements Initializable {
@@ -21,20 +19,11 @@ public class dashboardController implements Initializable {
     private ImageView logoHotel;
     @FXML
     private ImageView lobbyBackground;
-    @FXML
-    private Button viewRoomsButton;
-    @FXML
-    private Button bookRoomButton;
-    @FXML
-    private Button cancelEditButton;
-    @FXML
-    private Button logoutButton;
+
     @FXML
     private Button cancelButton;
     @FXML
     private Label welcomeLabel;
-    @FXML
-    private Button myBookingsButton;
 
     private Integer user_id;
     private String firstname;
@@ -113,7 +102,7 @@ public class dashboardController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("myBookings.fxml"));
             Stage loginStage = new Stage();
             loginStage.initStyle(StageStyle.UNDECORATED);
-            loginStage.setScene(new Scene(root, 600, 400));
+            loginStage.setScene(new Scene(root, 700, 401));
             loginStage.show();
             Stage stage = (Stage) cancelButton.getScene().getWindow();
             stage.close();

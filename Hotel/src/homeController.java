@@ -1,22 +1,16 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
-
 import java.io.File;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.EventObject;
 import java.util.ResourceBundle;
 import java.net.URL;
 
@@ -24,8 +18,6 @@ public class homeController implements Initializable {
 
     @FXML
     private Button cancelButton;
-    @FXML
-    private Button loginButton;
     @FXML
     private ImageView TwinRoom;
     @FXML
@@ -36,18 +28,6 @@ public class homeController implements Initializable {
     private ImageView logoHotel;
     @FXML
     private ImageView lobbyHotel;
-    @FXML
-    private EventObject event;
-    @FXML
-    private Button bookTwin;
-    @FXML
-    private Button bookSingle;
-    @FXML
-    private Button bookDouble;
-    @FXML
-    private Label loginMessage;
-    @FXML
-    private Button contactus;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -139,7 +119,8 @@ public class homeController implements Initializable {
 
 
     public void loginToBook(ActionEvent e){
-        loginMessage.setText("Please login or register first in order to make a booking.");
+        Alert alert = new Alert(Alert.AlertType.ERROR, "Please login or register first in order to make a booking.");
+        alert.show();
     }
 
 
