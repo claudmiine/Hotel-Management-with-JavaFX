@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -5,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+//Main function od the program, core root, initializing first class and cotroller
 public class Main extends Application {
 
     @Override

@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +14,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+//FXML Loader call all the methods and classes defined in the controller
 public class registerController implements Initializable {
     @FXML
     private ImageView logoHotel;
@@ -65,14 +66,18 @@ public class registerController implements Initializable {
 
     }
 
+//Creating a function to stop the process of the program with cancelButton
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+//    Register user to the system
     public void registerUser() {
+//      configure new database
         database = new Database();
 
+//       Take the data from fields from GUI
         String firstname = firstnameTextField.getText();
         String lastname = lastnameTextField.getText();
         String address = addressTextField.getText();
@@ -82,10 +87,12 @@ public class registerController implements Initializable {
         String confirmpassword = confirmPasswordTextField.getText();
         String email = emailTextField.getText();
 
+//        Insert the data to database
         String insertFields = "INSERT INTO user (firstname, lastname, address, telephone, username, password, confirmpassword, email) VALUES ('";
         String insertValues = firstname + "','" + lastname + "','" + address + "','" + telephone + "','" + username + "','" + password + "','" + confirmpassword + "','" + email + "')";
         String insertToRegister = insertFields + insertValues;
 
+//      If all fields are filled, insert data to db
         if (!usernameTextField.getText().isEmpty() && !passwordTextField.getText().isEmpty()) {
             try {
                 database.statement = database.conn.createStatement();
@@ -97,6 +104,7 @@ public class registerController implements Initializable {
                 e.printStackTrace();
                 e.getCause();
             }
+//            If not, display the banner
         } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill all the fields. ");
                 alert.show();

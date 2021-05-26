@@ -108,14 +108,17 @@ public class myBookingsController implements Initializable {
 
     }
 
+//    Deleting booking from database
     public void deleteBooking() {
-
+//Select the specified booking with booking_id
         Booking selectedBooking = (Booking) tableBooking.getSelectionModel().getSelectedItem();
         if (selectedBooking != null) {
             int booking_id = selectedBooking.getBooking_id();
+//            Display the banner to ensure the user
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are You sure to delete booking with id " + booking_id + "?" , ButtonType.YES, ButtonType.CANCEL);
             alert.showAndWait();
             if (alert.getResult() == ButtonType.YES) {
+//                Update the db with deleted booking
                 try {
                     Database database = new Database();
                     database.statement = database.conn.createStatement();
@@ -132,7 +135,7 @@ public class myBookingsController implements Initializable {
         }
     }
 
-
+//Function to go back to the previous fxml file of the program
     public void backButtonOnAction(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));

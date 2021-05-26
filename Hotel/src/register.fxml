@@ -38,7 +38,7 @@
          </image>
       </ImageView>
       <Button fx:id="backButton" layoutX="-9.0" layoutY="373.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: #7a97b0#7a97b0;" text="Back" textFill="WHITE" />
-      <Button fx:id="confirmButton" layoutX="223.0" layoutY="320.0" mnemonicParsing="false" onAction="#registerUser" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Confirm registration" textFill="WHITE" />
+      <Button fx:id="confirmButton" layoutX="223.0" layoutY="320.0" mnemonicParsing="false" onAction="#registerUser" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Confirm registration" textFill="#0f0e0e" />
       <Button fx:id="cancelButton" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="59.0" style="-fx-background-color: #7a97b0#7a97b0 #7a97b0#7a97b0;" text="Cancel" textFill="WHITE" />
       <Label fx:id="registerMessageLabel" alignment="CENTER" layoutX="120.0" layoutY="346.0" prefHeight="53.0" prefWidth="332.0" textFill="#3f9951" wrapText="true" />
    </children>

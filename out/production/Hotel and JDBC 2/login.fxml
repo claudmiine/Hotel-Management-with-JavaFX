@@ -28,10 +28,10 @@
             <Label layoutX="124.0" layoutY="76.0" text="Username" />
             <Label layoutX="125.0" layoutY="135.0" text="Password" />
             <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="-6.0" layoutY="193.0" onDragDetected="#validateLogin" prefHeight="17.0" prefWidth="316.0" textFill="RED" />
-            <Button fx:id="loginButton" alignment="CENTER" layoutX="113.0" layoutY="210.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="37.0" prefWidth="79.0" style="-fx-background-color: #90aac4#90aac4 #90aac4#90aac4;" text="Login" textFill="WHITE" />
+            <Button fx:id="loginButton" alignment="CENTER" layoutX="119.0" layoutY="210.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #90aac4#90aac4 #90aac4#90aac4;" text="Login" />
          </children>
       </AnchorPane>
-      <Button fx:id="backButton" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="57.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" textFill="WHITE" />
-      <Button fx:id="cancelButton" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" textFill="WHITE" />
+      <Button fx:id="backButton" layoutY="374.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="57.0" style="-fx-background-color: #D2E2F4#D2E2F4;" text="Back" />
+      <Button fx:id="cancelButton" layoutX="545.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" style="-fx-background-color: #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE #D1CFBE#D1CFBE;" text="Cancel" />
    </children>
 </AnchorPane>

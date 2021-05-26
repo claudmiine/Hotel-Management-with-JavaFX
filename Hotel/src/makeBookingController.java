@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-
+//FXML Loader call all the methods and classes defined in the controller
 public class makeBookingController implements Initializable {
 
     @FXML
@@ -37,32 +38,38 @@ public class makeBookingController implements Initializable {
     private ComboBox<String> breakfastCombo;
     @FXML
     private ComboBox<String> paymentMethodCombo;
+//    importing classes from loginController
     private Integer user_id;
     private Database database;
 
+    //FXML Loader call all the methods and classes defined in the controller
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+//        Set the Labels as empty
         priceLabel.setText("");
         confirmationLabel.setText("");
         errorLabel.setText("");
+//        taking user_id from loginController
         this.user_id = loginController.user_id;
+//        clear roomTypeCombo and set selection model to display
         roomTypeCombo.getItems().removeAll(roomTypeCombo.getItems());
         checkoutDatePicker.setDisable(true);
         roomTypeCombo.getItems().addAll("Single", "Double", "Twin");
         roomTypeCombo.getSelectionModel().select("");
-
+        //clear numberOfNightdCombo and set selection model to display
         numberOfNightsCombo.getItems().removeAll(numberOfNightsCombo.getItems());
         numberOfNightsCombo.getItems().addAll( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14);
 
+//        clear breakfastComgo and set selection model to display
 
         breakfastCombo.getItems().removeAll(breakfastCombo.getItems());
         breakfastCombo.getItems().addAll("Yes", "No");
         breakfastCombo.getSelectionModel().select("");
 
         try {
+//          configure the database, selecting everything from specified user column
             database = new Database();
             database.statement = database.conn.createStatement();
-
             database.resultSet = database.statement.executeQuery("SELECT * FROM user WHERE user_id =" + user_id);
 
             while (database.resultSet.next()) {
@@ -77,12 +84,14 @@ public class makeBookingController implements Initializable {
             e.getCause();
         }
     }
+    //      Calculating number of nights
     public void NightsAction() {
         Integer nights = numberOfNightsCombo.getValue();
         LocalDate date = checkinDatePicker.getValue().plusDays(nights);
         checkoutDatePicker.setValue(date);
     }
 
+//    Calculating the predictable total cost
     public void CalcPrice() {
         Integer nights = numberOfNightsCombo.getValue();
         String roomSize = roomTypeCombo.getValue();
@@ -109,10 +118,12 @@ public class makeBookingController implements Initializable {
         }
     }
 
+//    populate database with new bookings
     public void makeBooking(ActionEvent event) {
         database = new Database();
 
         Integer user_id = loginController.user_id;
+//        taking values from combos from GUI fields
         String room_type = roomTypeCombo.getValue();
         Integer nights = numberOfNightsCombo.getValue();
         LocalDate checkinDate = checkinDatePicker.getValue();
@@ -121,7 +132,7 @@ public class makeBookingController implements Initializable {
         String payment = paymentMethodCombo.getValue();
         String total_cost = priceLabel.getText();
 
-
+//Inserting data to database
         String insertFields = "INSERT INTO booking (user_id, room_type, nights, checkinDate, checkoutDate, breakfast, total_cost, payment) VALUES ('";
         String insertValues = user_id + "','" + room_type + "','" + nights + "','" + checkinDate + "','" + checkoutDate + "','" + breakfast + "','" + total_cost + "','" + payment + "')";
         String insertToBooking = insertFields + insertValues;
@@ -138,15 +149,18 @@ public class makeBookingController implements Initializable {
             }
             return;
         } else {
+//            Displaying the banner if the field is empty
             errorLabel.setText("Please fill all the fields.");
         }
     }
 
+    //Creating a function for user to stop the process of the program with cancelButton via GUI
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+//Function to go back to the previous fxml file of the program
     public void backButtonOnAction(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));

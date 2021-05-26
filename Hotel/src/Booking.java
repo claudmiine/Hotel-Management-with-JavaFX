@@ -1,7 +1,7 @@
 import javafx.beans.property.*;
-
 import java.time.LocalDate;
 
+//Creating the Booking constructor to use the variables outside of the class in later development
 public class Booking {
     private SimpleIntegerProperty booking_id;
     private SimpleIntegerProperty user_id;
@@ -26,6 +26,7 @@ public class Booking {
         this.breakfast = new SimpleStringProperty(breakfast);
     }
 
+//Public getter and setter method to access the variables from outside of the class
     public int getBooking_id() {
         return booking_id.get();
     }

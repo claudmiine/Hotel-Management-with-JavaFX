@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,8 +15,8 @@ import java.io.File;
 import java.util.ResourceBundle;
 import java.net.URL;
 
+//FXML Loader call all the methods and classes defined in the controller
 public class homeController implements Initializable {
-
     @FXML
     private Button cancelButton;
     @FXML
@@ -29,6 +30,7 @@ public class homeController implements Initializable {
     @FXML
     private ImageView lobbyHotel;
 
+    //Initializing a controller after the root has been processed
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         File TwinRoomFile = new File("Hotel/images/twinroom.jpg");
@@ -52,12 +54,12 @@ public class homeController implements Initializable {
         lobbyHotel.setImage(lobbyHotelImage);
 
     }
-
+//Creating a function for user to stop the process of the program with cancelButton via GUI
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
-
+//Taking the user to login FXML file
     public void loginButtonOnAction(ActionEvent event) {
 
         goToLoginForm();
@@ -77,7 +79,7 @@ public class homeController implements Initializable {
             e.getCause();
         }
     }
-
+//Taking the user to register FXML file
     public void registerButtonOnAction(ActionEvent event){
         goToRegisterForm();
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -97,7 +99,7 @@ public class homeController implements Initializable {
             e.getCause();
         }
     }
-
+//Taking the user to contact FXML file
     public void contactusButtonOnAction(ActionEvent event) {
         goToContactUs();
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -117,7 +119,7 @@ public class homeController implements Initializable {
         }
     }
 
-
+//Displaying the banner if the user is trying to book the room without being logged in to the system
     public void loginToBook(ActionEvent e){
         Alert alert = new Alert(Alert.AlertType.ERROR, "Please login or register first in order to make a booking.");
         alert.show();

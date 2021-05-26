@@ -34,6 +34,7 @@
             <TableColumn fx:id="breakfastColumn" prefWidth="100.593017578125" text="Food Service" />
         </columns>
       </TableView>
-      <Button fx:id="cancelButton" layoutX="563.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteBooking" style="-fx-background-color: #d2ca81#d2ca81;" text="Cancel Booking" textFill="WHITE" />
+      <Button fx:id="cancelButton" layoutX="563.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteBooking" style="-fx-background-color: #E0D683#E0D683;" text="Cancel Booking" />
+      <Button layoutX="462.0" layoutY="359.0" mnemonicParsing="false" style="-fx-background-color: #E0D683#E0D683;" text="Edit Booking" />
    </children>
 </AnchorPane>

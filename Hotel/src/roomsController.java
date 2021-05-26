@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.util.ResourceBundle;
 import java.net.URL;
 
+//FXML Loader call all the methods and classes defined in the controller
 public class roomsController implements Initializable {
     @FXML
     private ImageView twinRoom;
@@ -45,7 +47,7 @@ public class roomsController implements Initializable {
 
     }
 
-
+//Function to go back to the previous fxml file of the program
     public void backButtonOnAction(ActionEvent event){
             try{
                 Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));

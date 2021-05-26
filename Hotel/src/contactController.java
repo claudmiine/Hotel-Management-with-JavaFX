@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+//FXML Loader call all the methods and classes defined in the controller
 public class contactController implements Initializable {
     @FXML
     private Button cancelButton;
@@ -25,7 +27,7 @@ public class contactController implements Initializable {
     @FXML
     private ImageView locationImage;
 
-
+    //Initializing a controller after the root has been processed
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -46,12 +48,12 @@ public class contactController implements Initializable {
         emailImage.setImage(emailImageView);
 
     }
-
+//Creating a function to stop the process of the program with cancelButton
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
-
+//Function to go back to the previous fxml file of the program
     public void backButtonOnAction(ActionEvent event){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));

@@ -1,3 +1,4 @@
+// Importing essential packages
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,16 +13,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.stage.StageStyle;
-
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.io.File;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ResourceBundle;
-
 import java.net.URL;
 
+//FXML Loader call all the methods and classes defined in the controller
 public class loginController implements Initializable {
+//  making classes public to make it possible to import them accessible from outside of the controller
     public static String firstname;
     public static String username;
     public static Integer user_id;
@@ -53,6 +51,7 @@ public class loginController implements Initializable {
 
     }
 
+//    Displaying the banner if the user does not provide username and password
     public void loginButtonOnAction(ActionEvent event) {
         if (!usernameField.getText().isEmpty() && !passwordField.getText().isEmpty()) {
             validateLogin();
@@ -109,7 +108,7 @@ public class loginController implements Initializable {
         }
     }
 
-
+//Taking the user to the previous FXML file
     public void backButtonOnAction(ActionEvent event){
         try{
             Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
@@ -125,7 +124,7 @@ public class loginController implements Initializable {
         }
 
     }
-
+//Creating a function for user to stop the process of the program with cancelButton via GUI
     public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
