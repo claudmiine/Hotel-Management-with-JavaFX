@@ -35,6 +35,5 @@
         </columns>
       </TableView>
       <Button fx:id="cancelButton" layoutX="563.0" layoutY="359.0" mnemonicParsing="false" onAction="#deleteBooking" style="-fx-background-color: #E0D683#E0D683;" text="Cancel Booking" />
-      <Button layoutX="462.0" layoutY="359.0" mnemonicParsing="false" style="-fx-background-color: #E0D683#E0D683;" text="Edit Booking" />
    </children>
 </AnchorPane>

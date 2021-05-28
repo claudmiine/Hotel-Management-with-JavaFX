@@ -99,8 +99,6 @@ public class registerController implements Initializable {
                 database.statement.executeUpdate(insertToRegister);
                 registerMessageLabel.setText("User has been registered successfully! Now please go back to log in.");
             } catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill all the fields. ");
-                alert.show();
                 e.printStackTrace();
                 e.getCause();
             }

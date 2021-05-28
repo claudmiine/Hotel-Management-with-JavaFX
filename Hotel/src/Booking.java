@@ -87,9 +87,6 @@ public class Booking {
         this.nights.set(nights);
     }
 
-    public String getRoom_type() {
-        return room_type.get();
-    }
 
     public SimpleStringProperty room_typeProperty() {
         return room_type;
