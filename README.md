@@ -8,6 +8,7 @@ The application is intergrated with PHPMyAdmin SQL database.
 * Java 8
 * JavaFX
 * MySQL
+* XAMPP
 * SceneBuilder
 
 ## Task description
