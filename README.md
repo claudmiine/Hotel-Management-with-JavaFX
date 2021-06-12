@@ -1,7 +1,7 @@
-
 # Hotel-Booking-System-with-JavaFX
 
 ![Animated GIF-downsized_large](https://user-images.githubusercontent.com/60967152/121776869-6e867700-cb8f-11eb-8337-70ea7a38275a.gif)
+![Animated GIF-downsized_large (1)](https://user-images.githubusercontent.com/60967152/121777746-f5d5e980-cb93-11eb-9b35-b9146c2ebb82.gif)
 
 ## Tools
 The project was developed for school purpose. The Hotel Booking system was created using JavaFX framework. The framework is fully integrated with Java Runtime 
